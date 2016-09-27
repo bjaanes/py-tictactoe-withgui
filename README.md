@@ -8,5 +8,5 @@ Gui in PyQt5
 Install PyQt5 with
 
 ```bash
-pip3 install PyQt5
+$ pip3 install PyQt5
 ```
