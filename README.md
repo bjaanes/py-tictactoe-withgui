@@ -1,7 +1,7 @@
 # PyTicTacToeWithGui
 Python Tic Tac Toe App With Gui
 
-Not much here yet, but there is a small plan for a little something extra in this one :)
+Play against an impossible computer! You will never win.
 
 Gui in PyQt5
 
