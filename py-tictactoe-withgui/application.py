@@ -33,6 +33,10 @@ class Main(QWidget):
         self.add_button(2, 1)
         self.add_button(2, 2)
 
+        restart_button = QPushButton("Restart Game")
+        restart_button.clicked.connect(lambda: self.restart_game())
+        self.grid.addWidget(restart_button, 3, 0, 1, 3)
+
         self.move(300, 150)
         self.setWindowTitle('Py Tic Tac Toe')
         self.show()
@@ -60,6 +64,10 @@ class Main(QWidget):
             if not self.game_done:
                 self.computer.make_play()
 
+    def restart_game(self):
+        self.game.restart()
+        self.game_done = False
+
     def announce_winner(self, winner):
         self.game_done = True
         msg = QMessageBox(self)
@@ -70,7 +78,6 @@ class Main(QWidget):
             msg.setText("It was a Draw!")
         else:
             msg.setText("The winner was " + winner + "!")
-
 
         msg.exec_()
 

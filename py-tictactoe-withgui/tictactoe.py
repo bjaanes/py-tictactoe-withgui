@@ -1,13 +1,21 @@
 import copy
 
+
 class TicTacToe:
     def __init__(self):
-        self.current_player = 'X'
         self.game_changed_callback = lambda: None
         self.game_won_callback = lambda: None
+        self.current_player = 'X'
         self.winner = ''
         self.game_over = False
         self.board = [['' for x in range(3)] for y in range(3)]
+
+    def restart(self):
+        self.current_player = 'X'
+        self.winner = ''
+        self.game_over = False
+        self.board = [['' for x in range(3)] for y in range(3)]
+        self.game_changed_callback(copy.deepcopy(self.board))e
 
     def play(self, x, y):
         if self.board[x][y] == '' and not self.game_over:
